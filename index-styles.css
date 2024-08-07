@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Rosarivo:ital@0;1&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --BGCOLOR: #272C60;
+    --FONT_LIGHT_COLOR: #FEEFEE;
+    --PADDING: 1rem;
+    --MARGIN: 1rem;
+}
+ul{
+    list-style-type: none;
+}
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+button{
+    font: inherit;
+    color: inherit;
+    background-color: var(--BGCOLOR);
+    border-style: none;
+}
+button:hover{
+    cursor: pointer;
+}
+a:hover{
+    cursor: pointer;
+}
+a:any-link{
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+}
+body{
+    background-color: var(--BGCOLOR);
+    color: var(--FONT_LIGHT_COLOR);
+    font-family: Rosarivo, serif;
+}
+.title{
+    width: 50%;
+}
+.header{
+    background-color: var(--BGCOLOR);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--FONT_LIGHT_COLOR);
+    padding: var(--PADDING);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    min-height: 10vh;
+}
+.nav-list{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.nav-li:nth-child(1), .nav-li:nth-child(2), .learn h3{
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-delay: 0.1s;
+}
+.nav-li:nth-child(1):hover, .nav-li:nth-child(2):hover, .learn h3:hover{
+    background-color: var(--FONT_LIGHT_COLOR);
+    color: var(--BGCOLOR);
+    transform: scale(1.2);
+}
+.menu-button{
+    min-width: 125px;
+    display: none;
+    position:relative;
+}
+.languages-button, .login-button{
+    display: flex;
+    position: relative;
+}
+.display-languages, .display-login, .menu-list{
+    display: none;
+    position: absolute;
+    top:2rem;
+    background-color: var(--BGCOLOR);
+    width: 100%;
+    line-height: 2rem;
+}
+
+.language, .login, .menu-item{
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-delay: 0.1s;
+}
+.language:hover , .login:hover, .menu-item:hover{
+    background-color: var(--FONT_LIGHT_COLOR);
+    color: var(--BGCOLOR);
+}
+.display-languages, .menu-list{
+    max-height: 6rem;
+    overflow-y: scroll;
+    overflow-x : hidden;
+}
+.search-button-clicked button, .search-button-clicked input{
+    margin: 0 var(--MARGIN);
+    padding: calc(var(--PADDING)/2);
+    background-color: var(--FONT_LIGHT_COLOR);
+    color: var(--BGCOLOR);
+    border-style: none;
+}
+.search-button-clicked input{
+    width: 50%;
+}
+.search-button-clicked{
+    display: none;
+    width: 80%;
+    margin: 0 auto;
+}
+section{
+    padding: var(--PADDING);
+    margin-top: 5rem;
+    min-height: 90vh;
+}
+footer{
+    width: 100%;
+    text-align: center;
+    background-color: var(--FONT_LIGHT_COLOR);
+    color: var(--BGCOLOR);
+}
+.social-media{
+    margin: var(--MARGIN) auto;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.call-button{
+    color: var(--FONT_LIGHT_COLOR);
+    margin: var(--MARGIN) auto;
+    padding: var(--PADDING);
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+
+.language-choices{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.LinguaConnect-picture{
+    width: 33.33%;
+    margin-top: 3rem;
+}
+.language-flag-grid{
+    display: grid;
+    padding-top: var(--PADDING);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+.language-flag{
+    position: relative;
+    max-height: 200px;
+}
+.flag-text-content{
+    background-color: rgba(0, 0, 0, 0.556);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding:2px;
+}
+.change-height{
+    font-size: large;
+    transition-property: font-size;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    animation-name: slideUp;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+.learn{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    padding: var(--PADDING);
+}
+.learn h3{
+    padding: calc(var(--PADDING)/2);
+}
+.learn-section h2{
+    text-align: center;
+}
+h2:not(:first-of-type){
+    margin: var(--MARGIN);
+}
+@keyframes slideUp {
+    0%{
+        height: 20%;
+    }
+    12.5%{
+        height: 30%;
+    }
+    25%{
+        height: 40%;
+    }
+    37.5%{
+        height: 50%;
+    }
+    50%{
+        height: 60%;
+    }
+    62.5%{
+        height: 70%;
+    }
+    75%{
+        height: 80%;
+    }
+    87.5%{
+        height: 90%;
+    }
+    100%{
+        height: 100%;
+    }
+}
+.flag-text-content ul{
+    display: none;
+    height: 80%;
+}
+figcaption {
+    text-align: center;
+    padding: var(--PADDING) 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.learn-now-button, .quote-button, .quote-submit, .quote-reset{
+    margin: calc(var(--MARGIN)/2) auto;
+    padding: calc(var(--PADDING)/2);
+    background-color: var(--FONT_LIGHT_COLOR);
+    color: var(--BGCOLOR);
+    border-radius: 0.5rem;
+}
+.quote-submit, .quote-reset{
+    margin-left:0 ;
+    margin-right:0;
+    min-width: 15%;
+}
+.LinguaConnect-picture img{
+    width: 80%;
+    margin: auto;
+}
+.quote-form{
+    width: 100%;    
+}
+textarea{
+    padding: calc(var(--PADDING)/2);
+    display: none;
+    width: 80%;
+    margin: auto;
+    min-height: 4rem;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--FONT_LIGHT_COLOR);
+    color: var(--BGCOLOR);
+}
+textarea::placeholder{
+    color: #272c60c8;
+}
+.buttons-for-user-quote{
+    display: none;
+    width: 100%;
+    gap: 7px;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width:900px)
+{
+    .nav-list{
+        display: none;
+    }
+    .menu-button{
+        display: flex;
+    }
+    .language-choices{
+        flex-direction: column;
+    }
+    .LinguaConnect-picture{
+        width: 90%;
+        padding: 10px;
+    }
+}
+@media screen and (max-width: 550px){
+    .learn{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
